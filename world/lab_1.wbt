@@ -1,0 +1,72 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.922142078259742 0.3137735344888908 0.2262745159251313 4.955815243626732
+  position -0.1982781500421284 0.9473623981201612 0.3423224452467998
+}
+Background {
+  skyColor [
+    1 1 1
+  ]
+  luminosity 0.5
+}
+DirectionalLight {
+  ambientIntensity 0.6
+  direction 0 -1 0
+  castShadows TRUE
+  castLensFlares TRUE
+}
+RectangleArena {
+  translation 0 0 -0.04
+  floorSize 3 3
+  floorTileSize 0.3 0.3
+  floorAppearance Parquetry {
+    type "light strip"
+  }
+}
+Solid {
+  translation -0.0377277 -7.81597e-14 -0.348807
+  children [
+    DEF BOX Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.2 0.2 0.2
+      }
+    }
+  ]
+  boundingObject USE BOX
+}
+Solid {
+  translation 0.00747849 -1.24345e-14 0.356468
+  children [
+    DEF BOX Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.2 0.2 0.2
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject USE BOX
+  recognitionColors [
+    0 0 0
+  ]
+}
+DEF MY_ROBOT E-puck {
+  controller "lab1_solution"
+}
+BeerBottle {
+  translation 0.168394 1.77636e-14 -0.37198
+}
+BeerBottle {
+  translation 0.101893 4.99604e-15 -0.360445
+  name "beer bottle(1)"
+}
+Robot {
+  controller "lab1_autograder"
+  supervisor TRUE
+}
