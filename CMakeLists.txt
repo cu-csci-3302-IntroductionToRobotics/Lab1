@@ -5,10 +5,7 @@ cmake_minimum_required(VERSION 3.0)
 get_filename_component(PROJECT ${CMAKE_SOURCE_DIR} NAME)
 project(${PROJECT})
 
-# Get C or C++ sources in the current directory (only).
-file(GLOB C_SOURCES *.c)
-file(GLOB CPP_SOURCES *.cpp)
-set(SOURCES ${C_SOURCES} ${CPP_SOURCES})
+file(GLOB SOURCES app/*.cpp code/*.cpp)
 
 message("env is : $ENV{WEBOTS_HOME}")
 
@@ -21,12 +18,9 @@ include_directories(${WEBOTS_INCLUDE_CPP_DIR})
 message("libs-> ${WEBOTS_LIBRARIES}")
 message("libs-> ${WEBOTS_LIBRARY_CPP}")
 message("libs-> ${WEBOTS_LIBRARY_C}")
-set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
-add_executable(${PROJECT} ${SOURCES})
-target_link_libraries(${PROJECT} ${WEBOTS_LIBRARIES} )
+add_executable(run_lab ${SOURCES})
+target_link_libraries(run_lab ${WEBOTS_LIBRARIES} )
 
-set(CMAKE_MACOSX_RPATH 1)
-set(CMAKE_BUILD_RPATH "$ENV{WEBOTS_HOME}")
 
 # Link with the Webots controller library.
 # link_directories($ENV{WEBOTS_HOME}/lib/controller)
