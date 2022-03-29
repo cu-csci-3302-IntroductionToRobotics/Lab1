@@ -1,4 +1,4 @@
-#VRML_SIM R2021a utf8
+#VRML_SIM R2021b utf8
 WorldInfo {
   coordinateSystem "NUE"
 }
@@ -57,7 +57,7 @@ Solid {
   ]
 }
 DEF MY_ROBOT E-puck {
-  controller "lab1_solution"
+  controller "<extern>"
 }
 BeerBottle {
   translation 0.168394 1.77636e-14 -0.37198
@@ -65,8 +65,4 @@ BeerBottle {
 BeerBottle {
   translation 0.101893 4.99604e-15 -0.360445
   name "beer bottle(1)"
-}
-Robot {
-  controller "lab1_autograder"
-  supervisor TRUE
 }
