@@ -14,7 +14,14 @@ void master::Run(){
     robot->SetLeftMotorSpeed(speed);
     robot->SetRightMotorSpeed(speed);
 
+    vector<double> dist;
+
     // continue simulating until StepSim() returns -1 (the simulator stop condition)
     while (robot->StepSim() != -1) {
+        robot->getProximitySensors(dist);
+        for(int ii=0;ii<dist.size();ii++){
+            cout << dist.at(ii) << ',';
+        }
+        cout << endl;
     }
 }

@@ -58,6 +58,7 @@ Solid {
 }
 DEF MY_ROBOT E-puck {
   controller "<extern>"
+  supervisor TRUE
 }
 BeerBottle {
   translation 0.168394 1.77636e-14 -0.37198
