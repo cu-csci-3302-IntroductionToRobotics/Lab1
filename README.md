@@ -3,7 +3,7 @@
 State machine based Reactive Behavior
 
 ## How to build your project
-
+ 
 ### Step 1 (in terminal)
 
 pull the repository to your pc or jupytherhub environment
