@@ -11,6 +11,7 @@ void master::Run(){
 
     double speed = 1.5; // [rad/s]
 
+    // this is how you set speed of each motor
     robot->SetLeftMotorSpeed(speed);
     robot->SetRightMotorSpeed(speed);
 
@@ -18,10 +19,16 @@ void master::Run(){
 
     // continue simulating until StepSim() returns -1 (the simulator stop condition)
     while (robot->StepSim() != -1) {
+        // print proximity sensor values while driving forward
         robot->getProximitySensors(dist);
         for(int ii=0;ii<dist.size();ii++){
             cout << dist.at(ii) << ',';
         }
         cout << endl;
     }
+
+    // Remove the dummy code above and add your own code bellow
+    // you want to create a state machine which would define your
+    // robot's behaviour
+    
 }

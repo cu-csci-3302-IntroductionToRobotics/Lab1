@@ -50,7 +50,6 @@ public:
     for(int ii=0;ii<distsen.size();ii++){
       values.at(ii) = distsen.at(ii)->getValue();
     }
-    cout << endl;
   }
 
   int StepSim() {
